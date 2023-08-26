@@ -1,0 +1,21 @@
+void insert(struct node**head,struct node**tail,int d){
+    if(*head==NULL){
+        struct node*new_node;
+        new_node=malloc(sizeof(struct node));
+        new_node->data=d;
+        new_node->next=NULL;
+        *head=new_node;
+        *tail=new_node;
+        printf("head : %d tail : %d \n",(*tail)->data,(*head)->data);
+    }
+    else{
+        struct node*new_node;
+        new_node=malloc(sizeof(struct node));
+        new_node->data=d;
+        new_node->next=NULL;
+        (*tail)->next=new_node;
+        *tail=new_node;
+        printf("head : %d tail : %d \n",(*tail)->data,(*head)->data);
+    }
+
+}
